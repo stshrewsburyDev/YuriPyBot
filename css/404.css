@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+#message{
+  padding: 80px 0;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 12.5px;
+  margin-bottom: 12.5px;
+  background-color: #1E2124;
+}
+
+#message h1{
+  font-size: 55px;
+  font-weight: normal;
+}
+
+#message h4{
+  padding-top: 20px;
+  font-size: 25px;
+  font-weight: normal;
+}
+
+@media screen and (max-width: 575px){
+  #message{
+    border-radius: 0;
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 991px){
+  #message h1{font-size: 45px;}
+
+  #message h4{font-size: 20px;}
+}
+
+@media screen and (max-width: 767px){
+  #message h1{font-size: 35px;}
+
+  #message h4{font-size: 16px;}
+}

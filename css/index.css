@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+#showcase, #stats, #about, #credits{
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 12.5px;
+  margin-bottom: 12.5px;
+  background-color: #1E2124;
+}
+
+#showcase img{
+  border-radius: 500px;
+  border: #646464 5px solid;
+  max-width: 512px;
+}
+
+#about #text{
+  color: #E0E0E0;
+  font-size: 18px;
+}
+
+#about #subtitle{
+  color: #AFBEFF;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#about #features{
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#about #features .col{
+  margin: 0 10px 2px 10px;
+  min-width: 250px;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid rgba(175, 175, 175, 0.1);
+}
+
+#about #features h5{
+  color: #CFCFCF;
+  font-weight: bold;
+}
+
+#about #features p{
+  color: #DFDFDF;
+  margin-bottom: 0;
+}
+
+#stats #values{text-align: center;}
+
+#stats #value{
+  color: #DFDFDF;
+  font-weight: bolder;
+  font-size: 45px;
+}
+
+#stats #value_name{
+  color: #AA78E1;
+  font-size: 22px;
+}
+
+#credits #table{padding: 0;}
+
+#credits .row{
+  margin: 10px;
+  border-radius: 15px;
+  background-color: #181B1E;
+  min-height: 150px;
+}
+
+#credits .row img{
+  float: left;
+  border-radius: 500px;
+  border: #646464 3px solid;
+  width: 125px;
+  margin: 12.5px;
+}
+
+#credits .row p{
+  font-size: 20px;
+  padding: 25px 10px 0;
+  margin: 0;
+  font-weight: 400;
+  color: #e1e1e1;
+}
+
+#credits .row #credits_desc{
+  font-size: 18px;
+  color: #AFAFAF;
+}
+
+#credits .row a{
+  display: table-cell;
+  box-sizing: content-box;
+  border-radius: 22px;
+  border: 2px solid #181B1E;
+  background-color: #282828;
+  text-align: center;
+  font-size: 22px;
+  vertical-align: middle;
+  color: #E1E1E1;
+  width: 40px;
+  height: 40px;
+  transition: .5s;
+}
+
+#credits .row a:hover{
+  background-color: #2F2F2F;
+  border-radius: 10px;
+  transition: .5s;
+}
+
+@media screen and (max-width: 991px){
+  #showcase .title, #showcase .smalltitle{text-align: center;}
+  #showcase img{
+    display: block;
+    margin: auto auto 15px auto;
+  }
+}
+
+@media screen and (max-width: 767px){
+  #credits .row img{width: 120px;}
+
+  #credits .row p{font-size: 18px;}
+
+  #credits .row #credits_desc{font-size: 16px;}
+
+  #credits .row a{
+    border-radius: 19px;
+    font-size: 20px;
+    width: 34px;
+    height: 34px;
+    transition: .5s;
+  }
+}
+
+@media screen and (max-width: 650px){
+  #showcase img{
+    width: 425px;
+  }
+}
+
+@media screen and (max-width: 575px){
+  #showcase, #stats, #about, #credits{
+    border-radius: 0;
+    margin-top: 0;
+  }
+}
