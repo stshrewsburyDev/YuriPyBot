@@ -7,4 +7,4 @@ RewriteRule ^(.*)$ $1.html [NC,L]
 
 # 404 redirect
 
-ErrorDocument 404 https://yuri.stshrewsbury.dev/404.html
+ErrorDocument 404 https://yuripybot.xyz/404.html
