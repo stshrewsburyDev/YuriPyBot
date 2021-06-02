@@ -42,9 +42,6 @@
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-      <!-- DiscordBotList -->
-      <!--<script src="https://discordbotlist.com/widget/index.js" async></script>-->
-
       <!-- Stylesheets -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -107,15 +104,32 @@
       <div id="values" class="container">
         <div class="row">
           <div class="col">
-            <p id="value">450+<!--<dbl-stat bot-id="bot-yuri-pybot" stat="guilds">Loading...</dbl-stat>--></p>
+            <p id="value"><span id="stats-servers">500+</span></p>
             <p id="value_name"><i class="fas fa-server"></i> Guilds</p>
           </div>
           <div class="col">
-            <p id="value">30,000+<!--<dbl-stat bot-id="bot-yuri-pybot" stat="users">Loading...</dbl-stat>--></p>
+            <p id="value"><span id="stats-users">30,000+</span></p>
             <p id="value_name"><i class="fas fa-user-friends"></i> Users</p>
           </div>
         </div>
       </div>
+
+      <!-- Load stats from API -->
+      <script type="text/javascript">
+        let api = new XMLHttpRequest();
+        api.open("GET", "https://api.stshrewsbury.dev/yuri/stats", true);
+        api.send();
+        api.onreadystatechange = processRequest;
+
+        function processRequest(e){
+          if (api.readyState == 4 && api.status == 200){
+            let response = JSON.parse(api.responseText);
+
+            document.getElementById("stats-servers").textContent = response.servers.toLocaleString("en-US");
+            document.getElementById("stats-users").textContent = response.users.toLocaleString("en-US");
+          }
+        }
+      </script>
     </div>
 
     <!-- About -->
